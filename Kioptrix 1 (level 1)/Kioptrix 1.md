@@ -1,4 +1,3 @@
-<img width="1912" height="1050" alt="image" src="https://github.com/user-attachments/assets/7aab69a8-177b-4947-942e-278b982cf617" />[[Vulnhub]]
 # Machine Link
 https://www.vulnhub.com/entry/kioptrix-level-1-1,22/
 
@@ -25,12 +24,8 @@ PORT      STATE SERVICE     VERSION
 MAC Address: 08:00:27:B9:A3:58 (Oracle VirtualBox virtual NIC)
 ```
 
-
-
-
 On Port 80 a apache test page was running :
 <img width="1334" height="228" alt="image" src="https://github.com/user-attachments/assets/5cb2031b-85bb-480d-82ae-b4da697c5f87" />
-
 
 
 # Exploiting with mod_ssl 2.8.4

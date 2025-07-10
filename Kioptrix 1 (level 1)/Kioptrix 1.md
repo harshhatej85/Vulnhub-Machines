@@ -25,7 +25,7 @@ MAC Address: 08:00:27:B9:A3:58 (Oracle VirtualBox virtual NIC)
 ```
 
 On Port 80 a apache test page was running :
-<img width="1334" height="228" alt="image" src="https://github.com/user-attachments/assets/5cb2031b-85bb-480d-82ae-b4da697c5f87" />
+![Uploading image.png…]()
 
 
 # Exploiting with mod_ssl 2.8.4

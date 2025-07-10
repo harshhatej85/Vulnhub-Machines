@@ -1,6 +1,7 @@
 # Machine Link
 https://www.vulnhub.com/entry/kioptrix-level-1-1,22/
 
+
 # Enumeration
 
 Finding the internal network ip with namp :

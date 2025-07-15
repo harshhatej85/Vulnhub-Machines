@@ -16,6 +16,7 @@ https://www.vulnhub.com/entry/kioptrix-level-12-3,24/
 **CREDENTIAL (ANY):**
 
 **loneferret : starwars**
+
 **dreg : Mast3r** 
 
 

